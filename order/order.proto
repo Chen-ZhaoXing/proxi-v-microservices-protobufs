@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package SGCooks.Order;
+
+option go_package = "github.com/Chen-ZhaoXing/proxi-v-microservices-protobufs/order";
+
+import "checkout/checkout.proto";  // Importing from checkout.proto
+
+service OrderService {
+  rpc PlaceOrder (OrderRequest) returns (OrderResponse);
+}
+
+message OrderRequest {
+  string user_id = 1;
+  repeated SGCooks.Checkout.RecipeOrderItem items = 2;  // Using RecipeOrderItem from checkout.proto
+}
+
+message OrderResponse {
+  bool success = 1;
+  string order_id = 2;
+  string message = 3;
+}
