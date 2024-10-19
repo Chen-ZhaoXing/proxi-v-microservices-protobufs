@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v5.28.0
-// source: recipe.proto
+// source: recipe/recipe.proto
 
 package recipe
 
@@ -307,5 +307,5 @@ var RecipeService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "recipe.proto",
+	Metadata: "recipe/recipe.proto",
 }
