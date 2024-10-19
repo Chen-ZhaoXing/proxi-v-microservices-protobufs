@@ -4,7 +4,7 @@
 // - protoc             v5.28.0
 // source: recipe/recipe.proto
 
-package recipe
+package main
 
 import (
 	context "context"
