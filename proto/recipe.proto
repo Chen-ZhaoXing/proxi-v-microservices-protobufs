@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package SGCooks.Recipe;
 
-option go_package = "github.com/Chen-ZhaoXing/proxi-v-microservices-protobufs/recipe";
+option go_package = "github.com/Chen-ZhaoXing/proxi-v-microservices-protobufs/proto";
 
 service RecipeService {
   rpc GetAllRecipes (Empty) returns (RecipeListResponse);

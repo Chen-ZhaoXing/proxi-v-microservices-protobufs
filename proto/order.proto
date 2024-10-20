@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package SGCooks.Order;
 
-option go_package = "github.com/Chen-ZhaoXing/proxi-v-microservices-protobufs/order";
+option go_package = "github.com/Chen-ZhaoXing/proxi-v-microservices-protobufs/proto";
 
 import "checkout.proto";  // Importing from checkout.proto
 

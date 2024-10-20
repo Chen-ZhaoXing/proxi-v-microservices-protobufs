@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package SGCooks.Checkout;
 
-option go_package = "github.com/Chen-ZhaoXing/proxi-v-microservices-protobufs/checkout";
+option go_package = "github.com/Chen-ZhaoXing/proxi-v-microservices-protobufs/proto";
 
 service CheckoutService {
   rpc Checkout (CheckoutRequest) returns (CheckoutResponse);
