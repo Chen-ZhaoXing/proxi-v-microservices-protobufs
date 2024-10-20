@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package SGCooks.Checkout;
+
+option go_package = "github.com/Chen-ZhaoXing/proxi-v-microservices-protobufs/checkout";
+
+service CheckoutService {
+  rpc Checkout (CheckoutRequest) returns (CheckoutResponse);
+}
+
+message CheckoutRequest {
+  repeated RecipeOrderItem items = 1;  // Using a message defined in this proto
+}
+
+message RecipeOrderItem {
+  string recipe_id = 1;
+  int32 quantity = 2;  // Quantity of the recipe being checked out
+}
+
+message CheckoutResponse {
+  bool success = 1;
+  string message = 2;
+}
