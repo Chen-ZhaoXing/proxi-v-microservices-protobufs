@@ -7,7 +7,6 @@
 package proto
 
 import (
-	checkout "github.com/Chen-ZhaoXing/proxi-v-microservices-protobufs/checkout"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -26,8 +25,8 @@ type OrderRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId string                      `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Items  []*checkout.RecipeOrderItem `protobuf:"bytes,2,rep,name=items,proto3" json:"items,omitempty"` // Using RecipeOrderItem from checkout.proto
+	UserId string             `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Items  []*RecipeOrderItem `protobuf:"bytes,2,rep,name=items,proto3" json:"items,omitempty"` // Using RecipeOrderItem from checkout.proto
 }
 
 func (x *OrderRequest) Reset() {
@@ -69,7 +68,7 @@ func (x *OrderRequest) GetUserId() string {
 	return ""
 }
 
-func (x *OrderRequest) GetItems() []*checkout.RecipeOrderItem {
+func (x *OrderRequest) GetItems() []*RecipeOrderItem {
 	if x != nil {
 		return x.Items
 	}
@@ -166,7 +165,7 @@ var file_order_proto_rawDesc = []byte{
 	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x43, 0x68, 0x65, 0x6e, 0x2d, 0x5a, 0x68, 0x61, 0x6f, 0x58,
 	0x69, 0x6e, 0x67, 0x2f, 0x70, 0x72, 0x6f, 0x78, 0x69, 0x2d, 0x76, 0x2d, 0x6d, 0x69, 0x63, 0x72,
 	0x6f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
-	0x75, 0x66, 0x73, 0x2f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x75, 0x66, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x33,
 }
 
@@ -184,9 +183,9 @@ func file_order_proto_rawDescGZIP() []byte {
 
 var file_order_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_order_proto_goTypes = []any{
-	(*OrderRequest)(nil),             // 0: SGCooks.Order.OrderRequest
-	(*OrderResponse)(nil),            // 1: SGCooks.Order.OrderResponse
-	(*checkout.RecipeOrderItem)(nil), // 2: SGCooks.Checkout.RecipeOrderItem
+	(*OrderRequest)(nil),    // 0: SGCooks.Order.OrderRequest
+	(*OrderResponse)(nil),   // 1: SGCooks.Order.OrderResponse
+	(*RecipeOrderItem)(nil), // 2: SGCooks.Checkout.RecipeOrderItem
 }
 var file_order_proto_depIdxs = []int32{
 	2, // 0: SGCooks.Order.OrderRequest.items:type_name -> SGCooks.Checkout.RecipeOrderItem
@@ -204,6 +203,7 @@ func file_order_proto_init() {
 	if File_order_proto != nil {
 		return
 	}
+	file_checkout_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_order_proto_msgTypes[0].Exporter = func(v any, i int) any {
 			switch v := v.(*OrderRequest); i {
